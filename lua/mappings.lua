@@ -175,5 +175,12 @@ map("n", "<leader>dr", "<cmd>Trouble lsp_references<CR>", opts)
 map("n", "<leader>bl", "<cmd>Gitsigns blame_line<CR>", { desc = "Gitsigns blame line" })
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", { desc = "Gitsigns toggle deleted" })
 
+-- Git mappings
+map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Gitsigns diff this file" })
+map("n", "<leader>gD", function()
+  vim.cmd "vsplit | terminal git diff"
+end, { desc = "Git diff in vertical split" })
+map("n", "<leader>gf", "<cmd>Telescope git_status<CR>", { desc = "Telescope git status and diffs" })
+
 -- Disable mappings
 local nomap = vim.keymap.del

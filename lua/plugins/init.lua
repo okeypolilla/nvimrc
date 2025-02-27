@@ -157,4 +157,22 @@ return {
 
   -- Completion
   { import = "plugins.spec.completion" },
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufReadPre",
+    config = function()
+      require("gitsigns").setup {
+        signs = {
+          add = { text = "┃" },
+          change = { text = "┃" },
+          delete = { text = "_" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+        },
+        numhl = false,
+        linehl = false,
+        word_diff = false,
+      }
+    end,
+  },
 }
